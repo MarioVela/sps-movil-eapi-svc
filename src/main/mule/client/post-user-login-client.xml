@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+	<sub-flow name="post-user-login-clientSub_Flow" doc:id="8c9365c0-4b6b-4189-be62-93620b9a788f" >
+		<http:request method="POST" doc:name="Request1" doc:id="c1173b25-b667-49ce-afd6-b84521fd1c11" config-ref="HTTP_Request_configuration" path="/user/login" />
+	</sub-flow>
+</mule>

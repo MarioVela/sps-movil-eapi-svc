@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core" xmlns:http="http://www.mulesoft.org/schema/mule/http"
+	xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
+http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd">
+	<http:request-config name="HTTP_Request_configuration" doc:name="HTTP Request configuration" doc:id="d66b18b9-f131-4598-aa78-a875d474687b" basePath="/empresa" body="#[payload]" uri-params="" path="/user" targetValue="#[payload]" correlationId="" query-params="" headers="" outputMimeType="" method="POST" url="" target="" outputEncoding="" config-ref="HTTP_Request_configuration">
+		<http:request-connection host="tn-store-user-papi-sv.us-e2.cloudhub.io" />
+		<http:default-headers >
+			<http:default-header key="client_id" value="fb9200a3e5d2409290ab52a90eb99bff" />
+			<http:default-header key="client_secret" value="e4848C3a2Ef7429381B9dF7E0B6b0903" />
+		</http:default-headers>
+	</http:request-config>
+	<sub-flow name="post-user-clientSub_Flow" doc:id="51fd439d-4383-4ef1-a14c-cfbd48d5e032" >
+		<http:request method="POST" doc:name="Request" doc:id="7cd9a52b-a8e4-4532-9510-488b0870d46e" config-ref="HTTP_Request_configuration" path="/user"/>
+	</sub-flow>
+</mule>
